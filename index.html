@@ -441,7 +441,26 @@
     color: var(--muted);
   }
   footer .socials { display: flex; gap: 18px; }
-  footer .socials a:hover { color: var(--text); }
+
+  /* ---------------- READABILITY FIX ----------------
+     These sections sit directly on the light peach page
+     background (no dark card behind them), so their text
+     needs to be dark instead of the site's default light
+     --text color, which was designed for the dark cards. */
+  header.hero h1, header.hero p,
+  #about h2, .about-grid p, .stat b, .stat span,
+  #work .section-head h2, #work .section-head p,
+  #pricing .section-head h2, #pricing .section-head p,
+  #contact h2, #contact p,
+  footer, footer .wrap {
+    color: #1a1a1a;
+  }
+  .btn-secondary {
+    color: #1a1a1a;
+    border-color: rgba(26, 26, 26, 0.25);
+  }
+  .btn-secondary:hover { border-color: var(--coral); color: var(--coral); }
+  footer .socials a:hover { color: var(--coral); }
 </style>
 </head>
 <body>
