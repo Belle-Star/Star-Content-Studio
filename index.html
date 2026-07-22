@@ -57,7 +57,7 @@
   .wrap {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 clamp(24px, 5vw, 64px);
   }
 
   .eyebrow {
@@ -127,6 +127,8 @@
   /* ---------------- HERO ---------------- */
   .hero {
     padding: 90px 0 70px;
+  }
+  .hero-grid {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 50px;
@@ -134,7 +136,8 @@
   }
 
   @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; padding-top: 56px; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero { padding-top: 56px; }
   }
 
   .hero h1 {
@@ -270,11 +273,10 @@
   #about { border-top: 1px solid var(--border); }
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 720px;
   }
-  @media (max-width: 780px) { .about-grid { grid-template-columns: 1fr; } }
   .about-grid p { color: var(--muted); margin-bottom: 16px; }
   .stat-row { display: flex; gap: 34px; margin-top: 26px; flex-wrap: wrap; }
   .stat b {
@@ -426,6 +428,37 @@
   }
   #contact h2 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 16px; }
   #contact p { color: var(--muted); max-width: 480px; margin: 0 auto 30px; }
+  #contact .prep-list {
+    list-style: none;
+    max-width: 420px;
+    margin: -10px auto 34px;
+    text-align: left;
+    padding: 0;
+  }
+  #contact .prep-list li {
+    color: #1a1a1a;
+    font-size: 14px;
+    padding: 6px 0 6px 26px;
+    position: relative;
+  }
+  #contact .prep-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--coral);
+    font-weight: 700;
+  }
+  #contact .contact-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  #contact .btn-secondary-alt {
+    border: 1px solid rgba(26, 26, 26, 0.25);
+    padding: 13px 24px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #1a1a1a;
+    display: inline-block;
+  }
+  #contact .btn-secondary-alt:hover { border-color: var(--coral); color: var(--coral); }
 
   footer {
     border-top: 1px solid var(--border);
@@ -480,7 +513,7 @@
 
 <!-- ================= HERO ================= -->
 <header class="hero">
-  <div class="wrap" style="display:contents;">
+  <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">Social Media Manager · Remote</span>
       <!-- EDIT: your headline -->
@@ -678,9 +711,16 @@
   <div class="wrap">
     <span class="eyebrow">Let's work together</span>
     <h2>Ready for your feed to work harder?</h2>
-    <p>Send a few details about your business and I'll get back within a day with a free mini-audit and a couple of quick suggestions.</p>
-    <a class="btn-primary" href="mailto:hello@starcontentstudio.com">Email me — hello@starcontentstudio.com</a>
-    <!-- EDIT: replace hello@starcontentstudio.com above with your real email address -->
+    <p>Send a few details about your business and I'll get back within a day with a mini-audit and a couple of quick suggestions. Here's what's helpful to include:</p>
+    <ul class="prep-list">
+      <li>Your business name and Main platform</li>
+      <li>Your website, if you have one</li>
+      <li>Your main goal right now (more foot traffic, more sales, brand awareness, etc.)</li>
+      <li>The biggest challenge you're having with social media currently</li>
+    </ul>
+    <div class="contact-ctas">
+      <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfvgisBwSrxuvE5K1ijawwTvqqUSMNtzL3bKol0O20M92pypg/viewform?usp=sharing&ouid=106101622251202259731" target="_blank" rel="noopener">Start here — quick intake form</a>
+    </div>
   </div>
 </section>
 
