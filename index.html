@@ -327,6 +327,8 @@
     border-radius: 16px;
     overflow: hidden;
     background: var(--surface);
+    display: flex;
+    flex-direction: column;
   }
 
   .case-thumb {
@@ -346,11 +348,11 @@
     border-radius: 999px;
   }
 
-  .case-body { padding: 22px; }
+  .case-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
   .case-body h3 { font-size: 17px; margin-bottom: 10px; }
   .case-body p { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
 
-  .case-metrics { display: flex; gap: 20px; }
+  .case-metrics { display: flex; gap: 20px; margin-top: auto; }
   .case-metrics div b {
     font-family: var(--font-display);
     font-size: 20px;
@@ -613,9 +615,8 @@
       <div class="case-card">
         <div class="case-thumb"><span class="tag">Bakery</span></div>
         <div class="case-body">
-          <h3>Pretty Little Pnaics</h3>
+          <h3>Pretty Little Panics</h3>
           <p>Built a content strategy focused on their strongest asset — behind-the-scenes video — with a consistent 3x/week posting plan designed to drive foot traffic.</p>
-          </div>
         </div>
       </div>
       <!-- EDIT: case study 2 -->
@@ -624,7 +625,6 @@
         <div class="case-body">
           <h3>Canine Duos</h3>
           <p>Rebuilt a dormant Instagram presence with a structured content calendar across Instagram and TikTok, timed to peak engagement windows to re-establish visibility.</p>
-          </div>
         </div>
       </div>
       <!-- EDIT: case study 3 -->
@@ -692,7 +692,7 @@
         <div class="amount">$1,000<span>/mo</span></div>
         <ul>
           <li>Everything in Growth</li>
-          <li>Daily stories, including polls & stickers<li>
+          <li>Daily stories, including polls & stickers</li>
           <li>Daily community management</li>
           <li>Monthly strategy call</li>
         </ul>
